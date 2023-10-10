@@ -6,6 +6,20 @@ let getComputerChoice = () => {
 };
 
 // get players selection
+let getPlayerSelection = () => {
+  let userChoice = prompt("Please enter rock, paper, or scissors: ");
+  userChoice = userChoice.toLowerCase();
+  while (
+    userChoice != "rock" &&
+    userChoice != "paper" &&
+    userChoice != "scissors"
+  ) {
+    userChoice = prompt(
+      "Invalid entry.\nPlease enter rock, paper, or scissors: "
+    );
+  }
+  return userChoice;
+};
 
 // function to play a single round
 
