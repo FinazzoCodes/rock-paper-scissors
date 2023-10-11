@@ -46,7 +46,7 @@ let playRound = (playerSelection, computerSelection) => {
 };
 
 // function to generate a game that calls the single round multiple times
-let game = () => {
+let generateGame = () => {
   const totalRounds = 5;
 
   for (let i = 1; i <= totalRounds; i++) {
@@ -65,4 +65,4 @@ let game = () => {
   }
 };
 
-game();
+generateGame();
