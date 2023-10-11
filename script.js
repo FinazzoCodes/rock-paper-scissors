@@ -1,3 +1,6 @@
+let userScore = 0;
+let computerScore = 0;
+
 // get computer's random choice
 let getComputerChoice = () => {
   const choices = ["rock", "paper", "scissors"];
@@ -23,22 +26,43 @@ let getUserChoice = () => {
 
 // function to play a single round
 let playRound = (playerSelection, computerSelection) => {
-  console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(`You chose: ${playerSelection}`);
+  console.log(`Computer chose: ${computerSelection}`);
   if (playerSelection === computerSelection) {
     console.log("It's a tie!");
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("Computer Wins!");
+    console.log("Computer wins the round!");
+    computerScore += 1;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("Computer Wins!");
+    console.log("Computer wins the round!");
+    computerScore += 1;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("Computer Wins!");
+    console.log("Computer wins the round!");
+    computerScore += 1;
   } else {
-    console.log("You win!");
+    console.log("You win the round!");
+    userScore += 1;
   }
 };
-const computerSelection = getComputerChoice();
-const playerSelection = getUserChoice();
-console.log(playRound(playerSelection, computerSelection));
 
 // function to generate a game that calls the single round multiple times
+let game = () => {
+  const totalRounds = 5;
+
+  for (let i = 1; i <= totalRounds; i++) {
+    console.log(`Round ${i}`);
+    let computerSelection = getComputerChoice();
+    let playerSelection = getUserChoice();
+    playRound(playerSelection, computerSelection);
+  }
+
+  if (userScore > computerScore) {
+    console.log("Congratulations! You have beat the computer :)");
+  } else if (userScore < computerScore) {
+    console.log("Oh no! You have lost the game :(");
+  } else {
+    console.log("The game is a tie.");
+  }
+};
+
+game();
