@@ -3,12 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <h1 class="title">Rock Paper Scissors</h1>
+    <h2 class="instructions">First to 5 wins!</h2>
+    <div class="buttons-container">
+      <button id="rock">
+        <img src="images/rock.png" alt="hand gesture of rock" />
+      </button>
+      <button id="paper">
+        <img src="images/paper.png" alt="hand gesture of paper" />
+      </button>
+      <button id="scissors">
+        <img src="images/scissors.png" alt="hand gesture of scissors" />
+      </button>
+    </div>
+    <h1 class="score">SCORE</h1>
+    <div class="players-container">
+      <img class="profile" src="images/user.png" alt="cartoon ghost" />
+      <img class="computer" src="images/computer.png" alt="cartoon computer" />
+    </div>
+    <div class="scores">
+      <h1 class="userScore">0</h1>
+      <h1 class="computerScore">0</h1>
+    </div>
     <div id="results"></div>
     <script src="script.js"></script>
   </body>
