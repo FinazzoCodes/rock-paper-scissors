@@ -25,7 +25,8 @@ let getUserChoice = () => {
 };
 
 // function to play a single round
-let playRound = (playerSelection, computerSelection) => {
+let playRound = (playerSelection) => {
+  computerSelection = getComputerChoice();
   console.log(`You chose: ${playerSelection}`);
   console.log(`Computer chose: ${computerSelection}`);
   if (playerSelection === computerSelection) {
@@ -45,24 +46,36 @@ let playRound = (playerSelection, computerSelection) => {
   }
 };
 
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => {
+  playRound("rock");
+});
+paper.addEventListener("click", () => {
+  playRound("paper");
+});
+scissors.addEventListener("click", () => {
+  playRound("scissors");
+});
+
 // function to generate a game that calls the single round multiple times
-let generateGame = () => {
-  const totalRounds = 5;
+// let generateGame = () => {
+//   const totalRounds = 5;
 
-  for (let i = 1; i <= totalRounds; i++) {
-    console.log(`Round ${i}`);
-    let computerSelection = getComputerChoice();
-    let playerSelection = getUserChoice();
-    playRound(playerSelection, computerSelection);
-  }
+//   for (let i = 1; i <= totalRounds; i++) {
+//     console.log(`Round ${i}`);
+//     let computerSelection = getComputerChoice();
+//     let playerSelection = getUserChoice();
+//     playRound(playerSelection, computerSelection);
+//   }
 
-  if (userScore > computerScore) {
-    console.log("Congratulations! You have beat the computer :)");
-  } else if (userScore < computerScore) {
-    console.log("Oh no! You have lost the game :(");
-  } else {
-    console.log("The game is a tie.");
-  }
-};
-
-generateGame();
+//   if (userScore > computerScore) {
+//     console.log("Congratulations! You have beat the computer :)");
+//   } else if (userScore < computerScore) {
+//     console.log("Oh no! You have lost the game :(");
+//   } else {
+//     console.log("The game is a tie.");
+//   }
+// };
