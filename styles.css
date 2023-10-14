@@ -12,15 +12,19 @@ h1 {
   color: black;
   text-align: center;
   font-size: 50px;
-}
-
-h1.title {
   margin: 40px;
   font-weight: bold;
 }
 
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+  font-weight: lighter;
+}
+
 h2.instructions {
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   font-weight: lighter;
   font-size: 40px;
   text-align: center;
@@ -48,10 +52,15 @@ button img {
   gap: 150px;
 }
 
-.score {
-  font-weight: lighter;
-  margin-top: 100px;
+h2.score {
+  margin-top: 150px;
   margin-bottom: 50px;
+  color: #b19e91;
+}
+
+#userScore,
+#computerScore {
+  color: #b19e91;
 }
 
 .players-container {
@@ -74,4 +83,14 @@ button img {
   justify-content: center;
   gap: 430px;
   margin-top: 20px;
+}
+
+#results {
+  width: 900px;
+  margin: 0 auto;
+}
+#results h3 {
+  margin-top: 75px;
+  font-size: 50px;
+  text-align: center;
 }
